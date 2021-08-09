@@ -1,10 +1,16 @@
-import "./App.css";
-
+import { Header, Card } from "./components";
+import { Container, Flex } from "@chakra-ui/react";
 function App() {
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
-    </div>
+    <>
+      <Header />
+      <Container maxW={"7xl"}>
+        <Flex justify="space-between">
+          <Card />
+          <Card isTag />
+        </Flex>
+      </Container>
+    </>
   );
 }
 
