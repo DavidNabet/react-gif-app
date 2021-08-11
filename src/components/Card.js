@@ -1,9 +1,11 @@
+import { lazy, Suspense } from "react";
 import { Box, useColorModePreference, Flex } from "@chakra-ui/react";
-import { RandomGif, Tag } from "./hooks";
+const RandomGif = lazy(() => import("./RandomGif"));
+const Tag = lazy(() => import("./Tag"));
 
 export default function Card({ isTag }) {
   return (
-    <>
+    <Suspense fallback={<div>loading...</div>}>
       <Flex direction="column">
         <Box
           bg={useColorModePreference("white", "gray.800")}
@@ -16,6 +18,6 @@ export default function Card({ isTag }) {
           {isTag ? <Tag /> : <RandomGif />}
         </Box>
       </Flex>
-    </>
+    </Suspense>
   );
 }
