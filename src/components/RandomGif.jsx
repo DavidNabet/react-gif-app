@@ -1,13 +1,11 @@
-import { Input } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import useGif from "../useGif";
 import {
-    Box,
-    Flex,
-    Image,
-    useColorModeValue,
-    Button,
-  } from "@chakra-ui/react";
+  Box,
+  Flex,
+  Image,
+  useColorModeValue,
+  Button,
+} from "@chakra-ui/react";
+import useGif from "../useGif";
 
 export default function RandomGif() {
     const {gif, fetchGif} = useGif();
